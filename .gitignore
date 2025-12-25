@@ -1,0 +1,21 @@
+# Laravel
+/vendor/
+/node_modules/
+/storage/app/
+/storage/framework/
+/storage/logs/
+/.phpunit.result.cache
+/.env
+
+# Node.js
+node_modules/
+.env
+
+# React/Vite
+dist/
+node_modules/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
