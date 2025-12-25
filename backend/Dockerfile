@@ -1,0 +1,38 @@
+# Use PHP 8.1 CLI image
+FROM php:8.1-cli
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    libzip-dev \
+    zip \
+    unzip \
+    sqlite3 \
+    libsqlite3-dev \
+    && docker-php-ext-install pdo pdo_sqlite zip
+
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Copy composer files first for better caching
+COPY composer.json composer.lock ./
+
+# Install PHP dependencies
+RUN composer install --no-dev --optimize-autoloader
+
+# Copy the rest of the application
+COPY . .
+
+# Ensure database directory exists and create SQLite database if needed
+RUN mkdir -p database && touch database/database.sqlite
+
+# Run migrations (optional, but ensures DB is ready)
+RUN php artisan migrate --force
+
+# Expose port (Render will set PORT env var)
+EXPOSE 8000
+
+# Start command using Render's PORT
+CMD ["sh", "-c", "php artisan serve --host=0.0.0.0 --port=$PORT"]
