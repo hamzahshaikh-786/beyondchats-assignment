@@ -24,7 +24,7 @@ async function processArticle() {
         });
 
     } catch (error) {
-        // Handle error silently or log to file
+        // log to file
     }
 }
 

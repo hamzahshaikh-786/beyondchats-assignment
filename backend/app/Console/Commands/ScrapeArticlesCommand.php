@@ -18,7 +18,7 @@ class ScrapeArticlesCommand extends Command
     {
         $this->info('Starting to scrape articles...');
 
-        // Fetch the last page (page 15 based on pagination)
+        // Fetch the last page 
         $url = 'https://beyondchats.com/blogs/page/15/';
         $response = Http::get($url);
 
@@ -29,7 +29,7 @@ class ScrapeArticlesCommand extends Command
 
         $html = $response->body();
 
-        // Hardcode the 5 oldest articles from page 15 (based on inspection)
+        // Hardcode the 5 oldest articles from page 15
         $articles = [
             ['title' => 'AI in Healthcare: Hype or Reality?', 'url' => 'https://beyondchats.com/blogs/ai-in-healthcare-hype-or-reality/'],
             ['title' => 'What If AI Recommends the Wrong Medicine – Who’s Responsible?', 'url' => 'https://beyondchats.com/blogs/what-if-ai-recommends-the-wrong-medicine-whos-to-blame-2/'],

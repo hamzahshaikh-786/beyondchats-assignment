@@ -9,7 +9,7 @@ async function scrapeContentFromUrls(urls) {
             const page = await browser.newPage();
             await page.goto(url, { waitUntil: 'networkidle2' });
 
-            // Extract main content (assuming it's in article, main, or p tags)
+            // Extract main content (assuming it's in article, main, or   p tags)
             const content = await page.evaluate(() => {
                 const article = document.querySelector('article') || document.querySelector('main') || document.body;
                 return article ? article.innerText : '';

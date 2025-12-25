@@ -2,6 +2,17 @@
 
 A full-stack application for scraping, processing, and displaying articles using Laravel, Node.js, and React.
 
+## Problem Statement
+
+BeyondChats required a system to:
+- Scrape existing blog articles
+- Store and manage them via APIs
+- Analyze top-ranking articles from Google
+- Enhance content using LLMs
+- Display original and updated articles in a modern UI
+
+This project demonstrates how such a system can be designed and implemented under time constraints.
+
 **Tech Stack:** Laravel (Backend), Node.js (Processing), React (Frontend), SQLite (DB).
 
 ## Setup Instructions
@@ -67,9 +78,19 @@ graph TD
     C --> M[SQLite DB]
 ```
 
+## API Endpoints (Laravel)
+
+ (GET)  -   /api/articles --> List all articles 
+ (GET)  -   /api/articles/{id} --> Fetch single article 
+ (POST) -   /api/articles --> Create article 
+ (PUT)  -   /api/articles/{id} --> Update article 
+ (DELETE)-  /api/articles/{id} --> Delete article 
+
+
 ## Live Demo Link
 
-[Frontend Demo](https://beyondchats-assignment-xi.vercel.app)
+[Frontend Demo] --> (https://beyondchats-assignment-xi.vercel.app)
+[Backend Demo] --> (https://beyondchats-assignment-wy3e.onrender.com/)
 
 ## Notes / Next Steps
 

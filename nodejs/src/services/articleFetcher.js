@@ -10,7 +10,7 @@ async function getLatestArticle() {
         if (articles.length === 0) {
             throw new Error('No articles found');
         }
-        // Assuming the last one is the latest (by ID or created_at)
+        // Assuming the last one is the latest
         return articles[articles.length - 1];
     } catch (error) {
         throw error;

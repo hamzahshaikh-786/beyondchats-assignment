@@ -15,7 +15,7 @@ async function searchGoogleForBlogs(title) {
         });
 
         const items = response.data.items || [];
-        // Filter for blogs or articles (exclude videos, images, etc.)
+        // Filter for blogs or articles (excludee videos, images, etc.)
         const blogLinks = items
             .filter(item => item.link && (item.link.includes('/blog/') || item.link.includes('/article/') || item.displayLink.includes('blog')))
             .slice(0, 2) // Top 2
