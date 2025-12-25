@@ -67,6 +67,6 @@ class ScrapeArticlesCommand extends Command
             $this->info("Scraped and stored: {$articleData['title']}");
         }
 
-        $this->info('Scraping completed.');
+        $this->info('Scraping completed.'); 
     }
 }
