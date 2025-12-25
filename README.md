@@ -17,7 +17,7 @@ This project demonstrates how such a system can be designed and implemented unde
 
 ## Setup Instructions
 
-### Backend
+### Backend:
 
 ```bash
 cd backend
