@@ -69,7 +69,7 @@ graph TD
 
 ## Live Demo Link
 
-[Frontend Demo](https://beyondchats-assignment.vercel.app) (Replace with your deployed URL)
+[Frontend Demo](https://beyondchats-assignment-xi.vercel.app)
 
 ## Notes / Next Steps
 
