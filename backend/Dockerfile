@@ -28,11 +28,8 @@ COPY . .
 # Ensure database directory exists and create SQLite database if needed
 RUN mkdir -p database && touch database/database.sqlite
 
-# Run migrations (optional, but ensures DB is ready)
-RUN php artisan migrate --force
-
 # Expose port (Render will set PORT env var)
 EXPOSE 8000
 
-# Start command using Render's PORT
-CMD ["sh", "-c", "php artisan serve --host=0.0.0.0 --port=$PORT"]
+# Start command using Render's PORT, run migrations first
+CMD ["sh", "-c", "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=$PORT"]
