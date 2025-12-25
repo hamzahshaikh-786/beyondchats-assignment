@@ -1,5 +1,5 @@
-# Use PHP 8.3 CLI image
-FROM php:8.3-cli
+# Use PHP 8.4 CLI image
+FROM php:8.4-cli
 
 # Set working directory
 WORKDIR /app
